@@ -1,20 +1,24 @@
 fun main() {
+    val inputList = listOf(1, 2, 3, 4, 5, 6)
+    val (firstHalf, secondHalf) = listSplitter(inputList)
     
+    println(firstHalf)
+    println(secondHalf)
 }
 
-fun listSplitter(fullList: listOf<Int>){
+fun listSplitter(fullList: List<Int>): Pair<List<Int>, List<Int>>{
+    val middle = fullList.size / 2
     
-    var listOne = listOf<Int>
-    var listTwo = listOf<Int>
-    var listIndex = Int
+    val listOne = mutableListOf<Int>()
+    val listTwo = mutableListOf<Int>()
     
-    for (i in fullList.size() / 2){
-        listOne.add[i]
-        
-        listIndex = i
+    for (i in 0 until middle){
+        listOne.add(fullList[i])
     }
     
-    for (i + listIndex in fullList.size(){
-        listOne.add[i + listIndex]
+    for (i in middle until fullList.size){
+        listTwo.add(fullList[i])
     }
+    
+    return Pair(listOne, listTwo)
 }
